@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<AssemblyName>ucbuild</AssemblyName>
+		<IsPackable>false</IsPackable>
+		<LangVersion>preview</LangVersion>
+		<Version>1.0.0</Version>
+		<PublishAot>true</PublishAot>
+
+		<CommitHash>ABCD</CommitHash>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="ceetemsoft.utils" Version="2.0.0-local" />
+		<PackageReference Include="ceetemsoft.lua" Version="0.5.0-local" />
+		<PackageReference Include="System.CommandLine" Version="2.0.0-rc.1.25451.107" />
+
+		<EmbeddedResource Include="resources/info.txt"/>
+	</ItemGroup>
+
+	<Target Name="AddBuildInfo" BeforeTargets="CoreGenerateAssemblyInfo">
+		<Exec Command="git rev-parse HEAD" ConsoleToMsBuild="true">
+			<Output TaskParameter="ConsoleOutput" PropertyName="CommitHash"/>
+		</Exec>
+
+		<ItemGroup>
+			<AssemblyAttribute Include="CeetemSoft.Attributes.GitCommitHashAttribute">
+				<CommitHash>$(CommitHash)</CommitHash>
+			</AssemblyAttribute>
+			<AssemblyAttribute Include="CeetemSoft.Attributes.TimeAttribute" />
+			<AssemblyAttribute Include="CeetemSoft.Attributes.AuthorAttribute">
+				<Author>$(USERNAME)</Author>
+			</AssemblyAttribute>
+		</ItemGroup>
+	</Target>
+</Project>

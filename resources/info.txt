@@ -1,0 +1,5 @@
+
+Version: {0}
+Commit:  {1}
+Author:  {2}
+Time:    {3}

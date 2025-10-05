@@ -1,0 +1,12 @@
+{	
+	"csharp.suppressBuildAssetsNotification": true,
+	"csharp.suppressDotnetRestoreNotification": true,
+	"omnisharp.disableMSBuildDiagnosticWarning": true,
+
+	"files.exclude": {
+		".git": true
+	},
+
+	"proj_dir": "${workspaceFolder}/cproj",
+	"bld_dir": "${config:proj_dir}/build"
+}

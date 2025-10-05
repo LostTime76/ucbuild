@@ -1,0 +1,17 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+	{
+		"name": "Test vsc-configure",
+		"type": "coreclr",
+		"preLaunchTask": "Debug Build",
+		"request": "launch",
+		"cwd": "${workspaceFolder}",
+		"console": "internalConsole",
+		"stopAtEntry": false,
+		"program": "${workspaceFolder}/artifacts/bin/ucbuild/debug/ucbuild.exe",
+		"args": [
+			"vsc-configure", "--file", "${config:bld_dir}/project.lua"
+		]
+	}]
+}

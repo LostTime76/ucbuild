@@ -1,0 +1,34 @@
+{
+	"version": "2.0.0",
+	"problemMatcher": "$msCompile",
+	"presentation": {
+		"echo": false,
+		"reveal": "always",
+		"focus": true,
+		"panel": "dedicated",
+		"showReuseMessage": false,
+		"clear": true
+	},
+	"tasks": [
+	{
+		"label": "Debug Build",
+		"type": "process",
+		"command": "dotnet",
+		"args": [
+			"build",
+			"-c", "Debug"
+		],
+		"group": {
+			"kind": "build",
+			"isDefault": true
+		}
+	},
+	{
+		"label": "Clean",
+		"type": "process",
+		"command": "dotnet",
+		"args": [
+			"clean"
+		]
+	}]
+}
