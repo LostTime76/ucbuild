@@ -1,7 +1,7 @@
-require("./common.lua")
+require("common.lua")
 
 -- Compiler defines
---cc_defs("RELEASE")
+cc_defs("RELEASE")
 
 -- Sources
---src_rdi(path(bsp_dir, "board_b"))
+sources(path(bsp_dir, "board_b"), "board.c")

@@ -2,7 +2,7 @@ using System.CommandLine;
 
 namespace UcBuild.Cli;
 
-public sealed class CompileCommand : BuildCommand
+public sealed class CompileCommand : ScriptCommand
 {
 	private const string _name = "compile";
 

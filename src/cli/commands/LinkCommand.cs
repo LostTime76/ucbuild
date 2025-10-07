@@ -2,7 +2,7 @@ using System.CommandLine;
 
 namespace UcBuild.Cli;
 
-public sealed class LinkCommand : BuildCommand
+public sealed class LinkCommand : ScriptCommand
 {
 	private const string _name = "link";
 

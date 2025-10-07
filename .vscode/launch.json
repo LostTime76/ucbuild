@@ -11,7 +11,11 @@
 		"stopAtEntry": false,
 		"program": "${workspaceFolder}/artifacts/bin/ucbuild/debug/ucbuild.exe",
 		"args": [
-			"vsc-configure", "--file", "${config:bld_dir}/project.lua"
+			"vsc-configure",
+			"--code", "release=true",
+			"--vsc_dir", "${config:proj_dir}/.vscode",
+			"${config:bld_dir}/debug.lua",
+			"${config:bld_dir}/release.lua"
 		]
 	}]
 }

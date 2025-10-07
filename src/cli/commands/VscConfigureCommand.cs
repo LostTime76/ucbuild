@@ -17,7 +17,13 @@ public sealed class VscConfigureCommand : ScriptCommand
 
 	private int Invoke(ParseResult result)
 	{
-		return 0;
+		// Resolve the targets
+		var targets = GetTargets(result);
+
+		// Write the properties file
+		VscProperties.Generate(result.GetValue(VscDirectory), targets);
+
+		return Program.Success;
 	}
 
 	private VscDirectoryOption VscDirectory { get; } = new();

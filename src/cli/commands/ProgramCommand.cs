@@ -10,7 +10,6 @@ public sealed class ProgramCommand : RootCommand
 	public ProgramCommand() : base(_description)
 	{
 		Add(new InfoCommand());
-		Add(new CleanCommand());
 		Add(new VscConfigureCommand());
 		Add(new CompileCommand());
 		Add(new LinkCommand());

@@ -24,6 +24,19 @@
 		}
 	},
 	{
+		"label": "Debug Publish",
+		"type": "process",
+		"command": "dotnet",
+		"args": [
+			"publish",
+			"-c", "Release"
+		],
+		"group": {
+			"kind": "build",
+			"isDefault": true
+		}
+	},
+	{
 		"label": "Clean",
 		"type": "process",
 		"command": "dotnet",
