@@ -1,4 +1,4 @@
-{	
+{
 	"csharp.suppressBuildAssetsNotification": true,
 	"csharp.suppressDotnetRestoreNotification": true,
 	"omnisharp.disableMSBuildDiagnosticWarning": true,
@@ -8,5 +8,13 @@
 	},
 
 	"proj_dir": "${workspaceFolder}/cproj",
-	"bld_dir": "${config:proj_dir}/build"
+	"bld_dir": "${config:proj_dir}/build",
+
+	"Lua.diagnostics.disable": [
+		"lowercase-global"
+	],
+	"Lua.workspace.library": [
+		"${workspaceFolder}/assets",
+		"${workspaceFolder}/cproj/build"
+	]
 }
