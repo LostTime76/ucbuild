@@ -6,8 +6,7 @@
 		<LangVersion>preview</LangVersion>
 		<Version>1.0.0</Version>
 		<PublishAot>true</PublishAot>
-
-		<CommitHash>ABCD</CommitHash>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 	</PropertyGroup>
 
 	<ItemGroup>

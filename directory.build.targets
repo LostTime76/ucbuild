@@ -1,5 +1,0 @@
-<Project>
-	<Target Name="PostClean" AfterTargets="Clean">
-		<RemoveDir Directories="$(ArtifactsPath)"/>
-	</Target>
-</Project>

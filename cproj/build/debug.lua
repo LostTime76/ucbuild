@@ -1,8 +1,22 @@
-require("common.lua")
+local common = require("common.lua")
+local target = { }
 
--- Compiler defines
-cc_defs("DEBUG")
+function target.configure(target)
+	
+end
 
--- Add sources to the build
-src_rdi(path.concat(bsp_dir, "board_a"))
-src_fe("erroneous.c")
+function target.add_sources(target)
+
+	-- Add common sources
+	common.add_sources(target)
+
+end
+
+function target.after_link(target)
+
+	-- Run common post link task
+	common.after_link(target)
+
+end
+
+return target

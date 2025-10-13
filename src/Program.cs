@@ -1,25 +1,36 @@
-using CeetemSoft.Io;
 using System.Reflection;
-using UcBuild.Toolchains;
+using UcBuild.Runtime;
 
 namespace UcBuild;
 
+/// <summary>
+/// Implements the main class of the program
+/// </summary>
 public static partial class Program
 {
+	/// <summary>
+	/// Indicates the program exited successfully
+	/// </summary>
 	public const int Success = 0;
 
+	/// <summary>
+	/// Gets the executing assembly
+	/// </summary>
 	public static readonly Assembly Assembly = Assembly.GetExecutingAssembly();
 
+	/// <summary>
+	/// The main entry point of the program
+	/// </summary>
+	/// <param name="args">
+	/// The command line arguments passed to the program
+	/// </param>
+	/// <returns>
+	/// The exit code of the program
+	/// </returns>
 	public static int Main(string[] args)
 	{
-		var toolchain = IToolchain.Create(default);
-		var compiler = toolchain.Compiler;
-		var settings = new CompilerSettings();
-		var source   = new SourceFile(Path.GetFullPath(Path.Combine(Path.GetSourceDirectory(), "../cproj/src/app/main.c")));
-
-		bool r = compiler.ResolveOutputs(source, Path.GetSourceDirectory(), settings, new());
-
-		r = compiler.Compile(source, settings);
+		LuaRuntime r = new(@"C:\Users\Colton\Desktop\Files\projects\ucbuild\cproj\build\project.lua");
+		var t = r.ConfigureTarget("debug");
 
 		return 0;
 	}

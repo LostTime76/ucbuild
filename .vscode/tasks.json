@@ -38,9 +38,11 @@
 	{
 		"label": "Clean",
 		"type": "process",
-		"command": "dotnet",
+		"command": "pwsh",
 		"args": [
-			"clean"
+			"-command", "Remove-Item",
+			"${config:artf_dir}",
+			"-Recurse", "-Force"
 		]
 	}]
 }

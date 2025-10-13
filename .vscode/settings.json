@@ -7,14 +7,13 @@
 		".git": true
 	},
 
-	"proj_dir": "${workspaceFolder}/cproj",
-	"bld_dir": "${config:proj_dir}/build",
-
 	"Lua.diagnostics.disable": [
 		"lowercase-global"
 	],
 	"Lua.workspace.library": [
 		"${workspaceFolder}/assets",
 		"${workspaceFolder}/cproj/build"
-	]
+	],
+
+	"artf_dir": "${workspaceFolder}/artifacts"
 }
